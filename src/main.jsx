@@ -6,15 +6,16 @@ import { UserProvider } from "./context/userContext.jsx";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router } from "react-router-dom";
 import { BookProvider } from "./context/bookContext.jsx";
+import { FilterProvider } from "./context/filterContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <UserProvider>
-      <BookProvider>
+  <UserProvider>
+    <BookProvider>
+      <FilterProvider>
         <Toaster />
         <Router>
           <App />
         </Router>
-      </BookProvider>
-    </UserProvider>
-  </React.StrictMode>
+      </FilterProvider>
+    </BookProvider>
+  </UserProvider>
 );

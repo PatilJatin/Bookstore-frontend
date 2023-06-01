@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import axios from "axios";
 import { createContext } from "react";
 import { useContext, useEffect, useReducer } from "react";
@@ -22,11 +20,14 @@ const BookProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getBooks = async (URL) => {
+    console.log("called");
     dispatch({ type: "SET_LOADING" });
     try {
       const response = await axios.get(URL);
+      console.log("axios called");
       const books = await response?.data;
-      dispatch({ type: "Top_PRODUCT_DATA", payload: books.data });
+      console.log(books.data);
+      dispatch({ type: "TOP-BOOK-DATA", payload: books.data });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
     }
@@ -39,7 +40,7 @@ const BookProvider = ({ children }) => {
       console.log(response?.data);
       const singleBook = await response?.data?.book;
       console.log(singleBook);
-      dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleBook });
+      dispatch({ type: "SET_SINGLE_BOOK", payload: singleBook });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });
     }

@@ -5,7 +5,7 @@ import Signup from "./pages/auth/Signup";
 import ErrorPage from "./pages/error/ErrorPage";
 import Navbar from "./components/Navbar";
 import Books from "./pages/books/Books";
-import SingleBook from "./components/SingleBook";
+
 function App() {
   return (
     <>
