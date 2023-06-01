@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CartAmountToggle from "./CartAmountToggle";
+import { useCartContext } from "../context/cartContext";
 const AddToCart = ({ product }) => {
-
+  const { addToCart } = useCartContext();
   const { _id, stock } = product;
   const [productsQuantity, setProductQuantity] = useState(1);
   const increaseQuantity = () => {

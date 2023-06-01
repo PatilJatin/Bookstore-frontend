@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useUserContext } from "../context/userContext";
+import { useCartContext } from "../context/cartContext";
 const Navbar = () => {
   const { isAuthenticated, userProfile, handleLogout } = useUserContext();
+  const { total_item } = useCartContext();
  
   return (
     <nav className="flex justify-between bg-primary-800 text-white px-3 py-6">
@@ -44,14 +46,14 @@ const Navbar = () => {
           )}
           <li>
             <NavLink
-              to={"/"}
+              to={"/cart"}
               className={
                 "relative hover:scale-105 hover:font-semibold transition-all duration-200 delay-100 text-lg font-medium"
               }
             >
               <ShoppingBagIcon style={{ width: "2.8rem", height: "2.8rem" }} />
               <span className="absolute top-[-0.4rem] right-[-0.2rem] z-10 bg-yellow-300 text-black rounded-full w-6 h-6 text-center text-[0.8rem]">
-                10
+                {total_item}
               </span>
             </NavLink>
           </li>
