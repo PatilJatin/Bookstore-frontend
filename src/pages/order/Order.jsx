@@ -251,7 +251,7 @@ const Order = () => {
                     </div>
                     <div className="ml-auto flex flex-col items-end justify-between">
                       <p className="text-right text-sm font-bold text-gray-900">
-                        {product.price}
+                        <FormatPrice price={product.price} />   
                       </p>
                       <button
                         type="button"
