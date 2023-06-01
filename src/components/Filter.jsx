@@ -1,10 +1,9 @@
-import React from "react";
 import { useFilterContext } from "../context/filterContext";
 import FormatPrice from "../helper/FormatPrice";
 
 const Filter = () => {
   const {
-    filters: { text, category, price, maxPrice, minPrice },
+    filters: { text, price, maxPrice, minPrice },
     allProducts,
     updateFilter,
     clearFilter,

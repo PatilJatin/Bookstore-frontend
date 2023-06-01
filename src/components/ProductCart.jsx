@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const ProductCart = (product) => {
   const { _id, images, author, name, price, category, description } = product;
   return (
-    <motion.div className="mx-auto rounded-xl mt-6">
+    <motion.div className="mx-auto rounded-xl mt-6 ">
       <Tilt
         options={{
           max: 45,

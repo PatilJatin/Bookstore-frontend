@@ -10,6 +10,34 @@ import StoreIcon from "@mui/icons-material/Store";
 // import AddToCart from "./AddToCart";
 import { useUserContext } from "../context/userContext";
 
+const product = {
+  _id: "647825e24c5fc81b2a4a91e7",
+  name: "One Piece, Vol. 101",
+  price: 799,
+  description:
+    "Join Monkey D. Luffy and his swashbuckling crew in their search for the ultimate treasure, One Piecee\n",
+  images: [
+    {
+      id: "Books/tolm3ewaodxnjpwpe4er",
+      secure_url:
+        "https://res.cloudinary.com/ddiq7elh2/image/upload/v1685595612/Books/tolm3ewaodxnjpwpe4er.jpg",
+      _id: "647825e24c5fc81b2a4a91e8",
+    },
+    {
+      id: "Books/ppdp6a962cadjm1hsjba",
+      secure_url:
+        "https://res.cloudinary.com/ddiq7elh2/image/upload/v1685595615/Books/ppdp6a962cadjm1hsjba.jpg",
+      _id: "647825e24c5fc81b2a4a91e9",
+    },
+  ],
+  category: "Comics",
+  author: "Eiichiro Oda",
+  stock: 30,
+  featured: true,
+  createdAt: "2023-06-01T05:00:18.697Z",
+  __v: 0,
+};
+
 const SingleBook = () => {
   const { getSingleBook, singleBook } = useBookContext();
   const { API } = useUserContext();
@@ -21,7 +49,7 @@ const SingleBook = () => {
   }, []);
 
   return (
-    <div className=" w-[100vw] py-6 bg-gray-200 text-black">
+    <div className="py-6 bg-gray-200 text-black overflow-x-hidden">
       <div className="product-container bg-gray-50  rounded-2xl w-[80%] mx-auto flex flex-wrap justify-around py-20">
         <div className="image-container  basis-[50%] flex justify-center py-10">
           <ImageSlider images={images} />
@@ -51,37 +79,6 @@ const SingleBook = () => {
             {description}
           </p>
 
-          <div className="service-details flex justify-between ">
-            <div className="basis-[20%] rounded-md p-1 m-2 bg-gray-800 text-white flex flex-col items-center gap-2 px-1">
-              <div className="bg-green-400 w-[50%] rounded-full p-2 text-center">
-                <LocalShippingIcon />
-              </div>
-              <p className="text-sm text-center">Free Delivery</p>
-            </div>
-            <div className="basis-[20%] rounded-md p-1 m-2 bg-gray-800 text-white flex flex-col items-center gap-2 px-1">
-              <div className="bg-pink-300 w-[50%] rounded-full p-2 text-center">
-                <PublishedWithChangesIcon />
-              </div>
-              <p className="text-sm text-center">
-                {" "}
-                {Math.floor(Math.random() * (15 - 3 + 1)) + 3} Days Replacement
-              </p>
-            </div>
-            <div className="basis-[20%] rounded-md p-1 m-2 bg-gray-800 text-white flex flex-col items-center gap-2 px-1">
-              <div className="bg-yellow-400 w-[50%] rounded-full p-2 text-center">
-                <SecurityIcon />
-              </div>
-              <p className="text-sm text-center">
-                {Math.floor(Math.random() * (2 - 1 + 1)) + 1} Warranty
-              </p>
-            </div>
-            <div className="basis-[20%] rounded-md p-1 m-2 bg-gray-800 text-white flex flex-col items-center gap-2 px-1">
-              <div className="bg-red-400 w-[50%] rounded-full p-2 text-center">
-                <StoreIcon />
-              </div>
-              <p className="text-sm text-center">Connect to Store</p>
-            </div>
-          </div>
           <div className="product-avaliblity">
             <p
               className={`${
