@@ -12,6 +12,7 @@ export default {
         "primary-300": "#222021",
         "primary-200": "#242124",
         "primary-100": "#363636",
+        "hero-bg": "#5A20CB",
       },
     },
   },
