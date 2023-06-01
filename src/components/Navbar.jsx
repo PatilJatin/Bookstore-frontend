@@ -5,11 +5,11 @@ import { useCartContext } from "../context/cartContext";
 const Navbar = () => {
   const { isAuthenticated, userProfile, handleLogout } = useUserContext();
   const { total_item } = useCartContext();
- 
+
   return (
     <nav className="flex justify-between bg-primary-800 text-white px-3 py-6">
       <NavLink to={"/"}>
-        <h2 className="font-extrabold  text-transparent text-4xl bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
+        <h2 className="font-extrabold tracking-widest  text-transparent text-4xl bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
           #BookHaven
         </h2>
       </NavLink>
