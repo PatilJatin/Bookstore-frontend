@@ -37,7 +37,6 @@ const UserProvider = ({ children }) => {
     return isTokenPresent;
   };
   const handleLogout = async () => {
-    console.log("method called");
     try {
       await axios.get(`${API}/logout`);
       deleteToken();
@@ -50,7 +49,6 @@ const UserProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("start");
     const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated"));
     const userProfile = JSON.parse(localStorage.getItem("userProfile"));
     if (

@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("called");
+
     try {
       const response = await axios.post(`${API}/login`, { email, password });
       if (response.status === 200) {

@@ -3,7 +3,7 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useUserContext } from "../context/userContext";
 const Navbar = () => {
   const { isAuthenticated, userProfile, handleLogout } = useUserContext();
-  console.log(userProfile, handleLogout, isAuthenticated);
+ 
   return (
     <nav className="flex justify-between bg-primary-800 text-white px-3 py-6">
       <NavLink to={"/"}>
@@ -20,7 +20,7 @@ const Navbar = () => {
             <NavLink to={"/"}>About</NavLink>
           </li>
           <li className=" hover:scale-105 hover:font-semibold transition-all duration-200 delay-100 text-lg font-medium">
-            <NavLink to={"/"}>Books</NavLink>
+            <NavLink to={"/books"}>Books</NavLink>
           </li>
           <li className=" hover:scale-105 hover:font-semibold transition-all duration-200 delay-100 text-lg font-medium">
             {isAuthenticated ? (
