@@ -26,6 +26,15 @@ Start the application using the following command:
 
 The application will be available at `https://book-haven-jatin.netlify.app/`.
 
+## Login
+
+To access the full functionality of the Book Haven application, you can use the following login credentials:
+
+1.Email: admin@gmail.com
+2.Password: 12345678
+
+Please note that this is a sample login functionality, and no real authentication is performed. You can enter the provided email and password to login and explore the features of the application.
+
 ## Routes
 
 The following routes are available in the application:
