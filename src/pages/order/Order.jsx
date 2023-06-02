@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import FormatPrice from "../../helper/FormatPrice";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-
 const Order = () => {
   const history = useNavigate();
   const [shippingInfo, setShippingInfo] = useState({
@@ -63,7 +62,6 @@ const Order = () => {
     <section className="mx-auto p-5 my-4 max-w-4xl md:my-6 bg-white">
       <div className="overflow-hidden  rounded-xl shadow">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Contact Info */}
           <div className="px-5 py-6 text-gray-900 md:px-8">
             <div className="flow-root">
               <div className="-my-6 divide-y divide-gray-200">

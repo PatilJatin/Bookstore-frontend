@@ -4,6 +4,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useUserContext } from "../../context/userContext";
+import styles from "./style";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -75,16 +76,13 @@ const Signup = () => {
           <form onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div>
-                <label
-                  htmlFor="name"
-                  className="text-base font-medium text-gray-900"
-                >
+                <label htmlFor="name" className={styles.signupLabel}>
                   {" "}
                   Full Name{" "}
                 </label>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="text"
                     placeholder="Full Name"
                     id="name"
@@ -94,16 +92,13 @@ const Signup = () => {
                 </div>
               </div>
               <div>
-                <label
-                  htmlFor="email"
-                  className="text-base font-medium text-gray-900"
-                >
+                <label htmlFor="email" className={styles.signupLabel}>
                   {" "}
                   Email address{" "}
                 </label>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="email"
                     placeholder="Email"
                     id="email"
@@ -114,17 +109,14 @@ const Signup = () => {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="password"
-                    className="text-base font-medium text-gray-900"
-                  >
+                  <label htmlFor="password" className={styles.signupLabel}>
                     {" "}
                     Password{" "}
                   </label>
                 </div>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="password"
                     placeholder="Password"
                     id="password"
@@ -135,17 +127,14 @@ const Signup = () => {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label
-                    htmlFor="file"
-                    className="text-base font-medium text-gray-900"
-                  >
+                  <label htmlFor="file" className={styles.signupLabel}>
                     {" "}
                     Profile photo{" "}
                   </label>
                 </div>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="file"
                     id="photo"
                     name="photo"

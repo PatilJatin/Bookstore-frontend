@@ -4,6 +4,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useUserContext } from "../../context/userContext";
 import { useState } from "react";
+import styles from "./style";
+
 const Login = () => {
   const { setAuthStatusAndUserProfile, setToken, API } = useUserContext();
   const history = useNavigate();
@@ -11,7 +13,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post(`${API}/login`, { email, password });
       if (response.status === 200) {
@@ -28,7 +29,7 @@ const Login = () => {
   };
   return (
     <section className="bg-white">
-      <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+      <div className="flex items-center justify-center  sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <h2 className="text-center text-2xl font-bold leading-tight text-black">
             Sign in to your account
@@ -47,14 +48,14 @@ const Login = () => {
               <div>
                 <label
                   htmlFor=""
-                  className="text-base font-medium text-gray-900"
+                  className={styles.signupLabel}
                 >
                   {" "}
                   Email address{" "}
                 </label>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="email"
                     name="email"
                     value={email}
@@ -67,7 +68,7 @@ const Login = () => {
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor=""
-                    className="text-base font-medium text-gray-900"
+                    className={styles.signupLabel}
                   >
                     {" "}
                     Password{" "}
@@ -75,7 +76,7 @@ const Login = () => {
                 </div>
                 <div className="mt-2">
                   <input
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                    className={styles.signupInput}
                     type="password"
                     name="password"
                     value={password}

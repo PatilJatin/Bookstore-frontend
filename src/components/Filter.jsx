@@ -16,7 +16,6 @@ const Filter = () => {
     newVal = ["All", ...new Set(newVal)];
     return newVal;
   };
-
   const categoryData = getUniqueData(allProducts, "category");
   const authorData = getUniqueData(allProducts, "author");
   return (
