@@ -88,7 +88,7 @@ const Order = () => {
                           <input
                             className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                             type="text"
-                            placeholder="Enter your name"
+                            placeholder="Enter your Name"
                             id="name"
                             name="name"
                             value={shippingInfo.name}
@@ -120,6 +120,7 @@ const Order = () => {
                                 type="text"
                                 id="address"
                                 name="address"
+                                placeholder="Enter your Address"
                                 autoComplete="street-address"
                                 className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                 value={shippingInfo.address}
@@ -145,6 +146,7 @@ const Order = () => {
                                 type="text"
                                 id="city"
                                 name="city"
+                                placeholder="City"
                                 autoComplete="address-level2"
                                 value={shippingInfo.city}
                                 onChange={(e) =>
@@ -170,6 +172,7 @@ const Order = () => {
                                 type="text"
                                 id="state"
                                 name="state"
+                                placeholder="State"
                                 autoComplete="address-level1"
                                 value={shippingInfo.state}
                                 onChange={(e) =>
@@ -195,6 +198,7 @@ const Order = () => {
                                 type="text"
                                 id="postalCode"
                                 name="postalCode"
+                                placeholder="Pinccode"
                                 autoComplete="postal-code"
                                 value={shippingInfo.postalCode}
                                 onChange={(e) =>
@@ -251,7 +255,7 @@ const Order = () => {
                     </div>
                     <div className="ml-auto flex flex-col items-end justify-between">
                       <p className="text-right text-sm font-bold text-gray-900">
-                        <FormatPrice price={product.price} />   
+                        <FormatPrice price={product.price} />
                       </p>
                       <button
                         type="button"

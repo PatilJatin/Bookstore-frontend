@@ -17,8 +17,8 @@ const SingleBook = () => {
   }, []);
 
   return (
-    <div className="py-6 bg-gray-200 text-black overflow-x-hidden">
-      <div className="product-container bg-gray-50  rounded-2xl w-[80%] mx-auto flex flex-wrap justify-around py-20">
+    <div className="py-6 bg-primary-400 text-black overflow-x-hidden">
+      <div className="product-container bg-gray-50 shadow-dark-sm rounded-2xl w-[80%] mx-auto flex flex-wrap justify-around py-20">
         <div className="image-container  basis-[50%] flex justify-center py-10">
           <ImageSlider images={images} />
         </div>
@@ -51,7 +51,7 @@ const SingleBook = () => {
             <p
               className={`${
                 stock > 0 ? "bg-green-600 " : "bg-red-600 "
-              } text-lg font-semibold w-[40%]  text-center rounded-md text-white mx-auto`}
+              } text-lg font-semibold w-[40%]  text-center rounded-md text-white `}
             >
               {stock > 0 ? "Available" : "Not Available"}
             </p>

@@ -14,7 +14,10 @@ export default {
         "primary-100": "#363636",
         "hero-bg": "#5A20CB",
       },
+      shadows: {
+        "dark-sm": "0 1px 2px 0 rgba(255, 255, 255, 0.05)", //White shadow
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

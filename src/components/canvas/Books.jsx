@@ -1,11 +1,18 @@
 import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../../components/Loader";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  // Define the rotation animation
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime();
+    const rotationSpeed = 0.05; // Adjust the rotation speed as needed
+    computer.scene.rotation.y = elapsedTime * rotationSpeed;
+  });
 
   return (
     <mesh>
@@ -24,7 +31,7 @@ const Computers = ({ isMobile }) => {
         object={computer.scene}
         scale={isMobile ? 0.05 : 0.15}
         position={isMobile ? [0, -3, -2.2] : [1.5, -2.5, -1]}
-        rotation={[-0.01, -0.3, -0.1]}
+    
       />
     </mesh>
   );
@@ -56,7 +63,7 @@ const Book = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
