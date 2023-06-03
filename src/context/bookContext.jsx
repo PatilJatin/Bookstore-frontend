@@ -20,13 +20,10 @@ const BookProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getBooks = async (URL) => {
-    console.log("called");
     dispatch({ type: "SET_LOADING" });
     try {
       const response = await axios.get(URL);
-      console.log("axios called");
       const books = await response?.data;
-      console.log(books.data);
       dispatch({ type: "TOP-BOOK-DATA", payload: books.data });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
@@ -37,9 +34,7 @@ const BookProvider = ({ children }) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     try {
       const response = await axios.get(URL);
-      console.log(response?.data);
       const singleBook = await response?.data?.book;
-      console.log(singleBook);
       dispatch({ type: "SET_SINGLE_BOOK", payload: singleBook });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });

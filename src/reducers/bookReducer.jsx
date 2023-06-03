@@ -2,7 +2,6 @@
 const BookReducer = (state, action) => {
   switch (action.type) {
     case "SET_LOADING":
-      console.log("set loading called");
       return {
         ...state,
         isLoading: true,
@@ -24,7 +23,6 @@ const BookReducer = (state, action) => {
         featureBooks: topBooks,
       };
     case "SET_SINGLE_BOOK":
-      console.log(action.payload);
       return {
         ...state,
         isSingleLoading: false,
