@@ -13,17 +13,14 @@ Book Haven is a web application for a book store built using Vite and ReactJS.
 
 ## Installation
 
-1. Clone the repository.
-2. Install the dependencies using the following command:
-
-- npm install
-
+ - Clone the repository.
+ - git clone https://github.com/PatilJatin/Bookstore-frontend.git
+ - Install the dependencies using the following command:
+ - cd book-haven
+ - npm install
+ - Start the application using the following command:
+ - npm run dev
 ## Usage
-
-Start the application using the following command:
-
-- npm start
-
 The application will be available at `https://book-haven-jatin.netlify.app/`.
 
 ## Login
