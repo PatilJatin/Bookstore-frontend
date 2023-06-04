@@ -13,6 +13,7 @@ const getLocalCartData = () => {
   }
   return [];
 };
+
 const initialState = {
   cart: getLocalCartData(),
   total_item: "",
@@ -22,12 +23,14 @@ const initialState = {
 // eslint-disable-next-line react/prop-types
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   const addToCart = (_id, productsQuantity, product) => {
     dispatch({
       type: "ADD_TO_CART",
       payload: { _id, productsQuantity, product },
     });
   };
+
   const removeItem = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
@@ -38,6 +41,7 @@ const CartProvider = ({ children }) => {
   const setDecreseQuantity = (id) => {
     dispatch({ type: "SET_DECREMENT", payload: id });
   };
+  
   useEffect(() => {
     dispatch({ type: "CART_TOTAL_ITEM" });
     dispatch({ type: "CART_TOTAL_PRICE" });

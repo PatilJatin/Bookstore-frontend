@@ -22,18 +22,17 @@ export const FilterProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const sorting = (event) => {
-    let userValue = event.target.value;
-    dispatch({ type: "GET_SORT_VALUE", payload: userValue });
-  };
+
   const updateFilter = (event) => {
     let name = event.target.name;
     let value = event.target.value;
     return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
   };
+
   const clearFilter = () => {
     dispatch({ type: "CLEAR_FILTER" });
   };
+
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCT" });
   }, [book, state.filters]);
@@ -44,7 +43,7 @@ export const FilterProvider = ({ children }) => {
 
   return (
     <FilterContext.Provider
-      value={{ ...state, sorting, updateFilter, clearFilter }}
+      value={{ ...state, updateFilter, clearFilter }}
     >
       {children}
     </FilterContext.Provider>

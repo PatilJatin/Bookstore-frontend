@@ -8,7 +8,7 @@ import AddToCart from "./AddToCart";
 import Loading from "./Loading";
 
 const SingleBook = () => {
-  const { getSingleBook, singleBook, isLoading } = useBookContext();
+  const { getSingleBook, singleBook, isSingleLoading } = useBookContext();
   const { API } = useUserContext();
   const { id } = useParams();
   const { description, images, name, price, stock } = singleBook;
@@ -19,7 +19,7 @@ const SingleBook = () => {
 
   return (
     <div className="py-6 bg-primary-400 text-black overflow-x-hidden relative ">
-      {isLoading ? (
+      {isSingleLoading ? (
         <Loading />
       ) : (
         <div className="  product-container bg-gray-50 shadow-dark-sm rounded-2xl w-[80%] mx-auto flex flex-wrap justify-around py-20">

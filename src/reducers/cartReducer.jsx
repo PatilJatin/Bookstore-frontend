@@ -1,6 +1,7 @@
 /* eslint-disable no-case-declarations */
 const cartReducer = (state, action) => {
   switch (action.type) {
+
     case "ADD_TO_CART":
       let { _id, productsQuantity, product } = action.payload;
 
@@ -9,6 +10,7 @@ const cartReducer = (state, action) => {
       });
 
       if (existingProduct) {
+
         let updateCart = state.cart.map((ele) => {
           if (ele._id === _id) {
             let newQuantity = ele.productsQuantity + productsQuantity;
@@ -20,7 +22,8 @@ const cartReducer = (state, action) => {
               ...ele,
               productsQuantity: newQuantity,
             };
-          } else {
+          } 
+          else {
             return {
               ...ele,
             };
@@ -31,7 +34,9 @@ const cartReducer = (state, action) => {
           ...state,
           cart: updateCart,
         };
-      } else {
+      } 
+      else {
+
         let cartProduct = {
           _id: _id ,
           name: product.name,
@@ -44,6 +49,7 @@ const cartReducer = (state, action) => {
           ...state,
           cart: [...state.cart, cartProduct],
         };
+        
       }
 
     case "REMOVE_ITEM":

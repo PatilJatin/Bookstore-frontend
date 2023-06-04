@@ -17,7 +17,7 @@ const ImageSlider = ({ images = [{ secure_url: "" }] }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-[500px] flex items-center justify-center relative ">
+      <div className="w-[500px] flex items-center justify-center relative transition-all duration-200 delay-100 ">
         <div className="absolute top-50%  md:left-[-1.5rem] ">
           <ArrowCircleLeftIcon onClick={prevImage} />
         </div>

@@ -13,6 +13,7 @@ const initialState = {
 const UserProvider = ({ children }) => {
   const API = "https://bookstore-mz0o.onrender.com/api/v1";
   const [state, dispatch] = useReducer(reducer, initialState);
+
   const setAuthStatusAndUserProfile = (status, userData) => {
     localStorage.setItem("isAuthenticated", JSON.stringify(status));
     localStorage.setItem("userProfile", JSON.stringify(userData));
@@ -36,6 +37,7 @@ const UserProvider = ({ children }) => {
     const isTokenPresent = !!token;
     return isTokenPresent;
   };
+  
   const handleLogout = async () => {
     try {
       await axios.get(`${API}/logout`);

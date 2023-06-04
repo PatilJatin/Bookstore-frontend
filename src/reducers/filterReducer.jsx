@@ -16,11 +16,6 @@ const filterReducer = (state, action) => {
           price: maxPrice,
         },
       };
-    case "GET_SORT_VALUE":
-      return {
-        ...state,
-        sorting_value: action.payload,
-      };
 
     case "UPDATE_FILTER_VALUE":
       const { name, value } = action.payload;
@@ -31,6 +26,7 @@ const filterReducer = (state, action) => {
           [name]: value,
         },
       };
+
     case "FILTER_PRODUCT":
       let { allProducts } = state;
       let tempFilterProduct = [...allProducts];
