@@ -1,6 +1,6 @@
 import { useFilterContext } from "../context/filterContext";
 import FormatPrice from "../helper/FormatPrice";
-
+import { useState } from "react";
 const Filter = () => {
   const {
     filters: { text, price, maxPrice, minPrice },
@@ -15,6 +15,11 @@ const Filter = () => {
     });
     newVal = ["All", ...new Set(newVal)];
     return newVal;
+  };
+  const [selectedAuthor, setSelectedAuthor] = useState("");
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedAuthor(selectedValue);
   };
   const categoryData = getUniqueData(allProducts, "category");
   const authorData = getUniqueData(allProducts, "author");
@@ -60,11 +65,19 @@ const Filter = () => {
             name="author"
             id="author"
             onClick={updateFilter}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[50%] mx-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 select select-accent"
+            onChange={handleSelectChange}
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[50%] mx-auto p-2.5  select select-accent"
           >
             {authorData.map((ele, index) => {
               return (
-                <option key={index} value={ele} name="author">
+                <option
+                  key={index}
+                  value={ele}
+                  name="author"
+                  style={{
+                    fontWeight: selectedAuthor === ele ? "bold" : "normal",
+                  }}
+                >
                   {ele}
                 </option>
               );
