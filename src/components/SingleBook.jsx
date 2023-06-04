@@ -18,7 +18,11 @@ const SingleBook = () => {
   }, []);
 
   return (
-    <div className="py-6 bg-primary-400 text-black overflow-x-hidden relative ">
+    <div
+      className={` ${
+        isSingleLoading && "w-[100vw] h-[100vh] "
+      } py-6 bg-primary-400 text-black overflow-x-hidden relative`}
+    >
       {isSingleLoading ? (
         <Loading />
       ) : (
